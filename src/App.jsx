@@ -8,7 +8,8 @@ import UploadStudents from "./components/UploadStudents";
 const App = () => {
 	return (
 		<Router>
-			<Navbar />
+			{/* adding navbar component to all the pages */}
+			<Navbar />  
 			<Routes>
 				<Route path="/" element={<MarkAttendance />} />
 				<Route path="/mark-attendance" element={<MarkAttendance />} />

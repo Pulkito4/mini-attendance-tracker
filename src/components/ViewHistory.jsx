@@ -20,13 +20,14 @@ const ViewHistory = () => {
 		"October",
 		"November",
 		"December",
-	]);
+	]); // read oonly field // months array stored in the state
 	const [groups, setGroups] = useState([]);
 	const [dates, setDates] = useState([]);
 	const [attendanceData, setAttendanceData] = useState([]);
 	const [students, setStudents] = useState([]);
 
 	useEffect(() => {
+		/** this similar manner of fetching the students data could have been used on the mark attendance component where we have actually queried the db again and again upon each change in group value selection */
 		const fetchStudents = async () => {
 			try {
 				const studentsCollectionRef = collection(db, "Students");

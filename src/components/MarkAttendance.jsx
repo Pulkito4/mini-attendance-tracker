@@ -12,8 +12,8 @@ import {
 const MarkAttendance = () => {
 	const [students, setStudents] = useState([]);
 	const [group, setGroup] = useState("All students");
-	const [isSubmitted, setIsSubmitted] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false); // to check if attendance is submitted // make the button disabled after submitting
+	const [loading, setLoading] = useState(false); // to show loading message while fetching students
 
 	// Fetch students from Firestore based on selected group
 	useEffect(() => {
@@ -46,8 +46,9 @@ const MarkAttendance = () => {
 		};
 
 		fetchStudents();
-	}, [group]);
+	}, [group]); // re-fetch students when group changes
 
+	// Update status of a student based on radio button selection // present or absent
 	const handleStatusChange = (index, status) => {
 		const newStudents = [...students];
 		newStudents[index].status = status;

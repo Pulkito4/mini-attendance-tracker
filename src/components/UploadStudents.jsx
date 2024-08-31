@@ -13,7 +13,7 @@ const UploadStudents = () => {
 	const handleUpload = () => {
 		if (file) {
 			Papa.parse(file, {
-				header: true,
+				header: true, // First row is header // header names are the fields that get stored in the database // all being stored as strings
 				complete: async (results) => {
 					const students = results.data;
 					for (const student of students) {
